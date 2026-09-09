@@ -16,13 +16,12 @@ Para o melhor funcionamento desta ferramenta, o projeto de **C** deve ter seguin
  		|―――― ...
 ```
 
-## Forma de Execução e Sintaxe de Comando
-
+## Sintaxe de Comando e Opções Disponíveis
+Esta ferramenta tem seguinte sintaxe: 
 ```Shell
 ./cbuild [OPÇÃO]
 ```
-
-## Opções Disponíveis
+As opções disponíveis são apresentadas a seguir:  
 
 ### build
 
