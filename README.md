@@ -22,9 +22,9 @@ Para o melhor funcionamento desta ferramenta, o projeto de **C** deve ter seguin
 ./cbuild [OPÇÃO]
 ```
 
-### Opções Disponíveis
+## Opções Disponíveis
 
-* build
+### build
 
 ```Shell
 ./cbuild build
@@ -46,7 +46,7 @@ Caso contrário, cbuild irá:
 1. Escrever o mensagem de erro.
 2. registrar o resultado do comando em diretório *logs/*.
 
-* run
+### run
 
 ```Shell
 ./cbuild run
@@ -54,7 +54,7 @@ Caso contrário, cbuild irá:
 
 Buscar e executar o binário executável dentro do diretório. Caso não encontrar o executável, escrever o mensagem de erro.
 
-* clean
+### clean
 
 ```Shell
 ./cbuild clean
@@ -64,7 +64,7 @@ Remover todos os arquivos do diretório *build/*
 
 <!-- Falta considerar o caso em que build/ não existe -->
 
-* rebuild
+### rebuild
 
 ```Shell
 ./cbuild rebuild
@@ -72,7 +72,7 @@ Remover todos os arquivos do diretório *build/*
 
 Recompilar o projeto. Na prática, realiza um clean sucedido pelo um build.
 
-* info
+### info
 
 ```Shell
 ./cbuild info
