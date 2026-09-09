@@ -25,19 +25,19 @@ Para o melhor funcionamento desta ferramenta, o projeto de **C** deve ter seguin
 ### Opções Disponíveis
 
 ##### build
-```Shell
-./cbuild build
-```
-Buscar e compilar os arquivos com sufixo .c no diretório *src/* junto com os cabeçalhos no diretório *include/*.  
-Se a compilação foi bem sucedida, cbuild irá:
-1. criar o diretório *build/* ;
-2. criar o binário executável com o nome do diretório raiz;
-<!-- Falta implementar -->
-3. registrar o resultado do comando em diretório *logs/*.
-<!-- Falta implementar -->
-Caso contrário, cbuild irá:
-1. Escrever o mensagem de erro.
-2. registrar o resultado do comando em diretório *logs/*.
+    ```Shell
+    ./cbuild build
+    ```
+    Buscar e compilar os arquivos com sufixo .c no diretório *src/* junto com os cabeçalhos no diretório *include/*.  
+    Se a compilação foi bem sucedida, cbuild irá:
+    1. criar o diretório *build/* ;
+    2. criar o binário executável com o nome do diretório raiz;
+    <!-- Falta implementar -->
+    3. registrar o resultado do comando em diretório *logs/*.
+    <!-- Falta implementar -->
+    Caso contrário, cbuild irá:
+    1. Escrever o mensagem de erro.
+    2. registrar o resultado do comando em diretório *logs/*.
 
 ##### run
 ```Shell
