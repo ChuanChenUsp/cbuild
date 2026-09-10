@@ -1,3 +1,46 @@
 [2026-09-10 14:11:14] Executando build
 [2026-09-10 14:11:14] Iniciando compilação
 [2026-09-10 14:11:14] A compilação foi concluida com êxito - (build/MDC) - Tempo: 201ms
+[2026-09-10 18:19:28] Executando rebuild
+[2026-09-10 18:19:28] [rebuild] Rebuild inicializado
+[2026-09-10 18:19:28] Executando clean
+[2026-09-10 18:19:28] [clean] Iniciando limpeza do diretório build/
+[2026-09-10 18:19:28] [clean] Limpeza concluída com êxito em 7489562ms - Código de retorno: 0
+[2026-09-10 18:19:28] Executando build
+[2026-09-10 18:19:28] [build] Iniciando compilação
+[2026-09-10 18:19:28] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 87267400ms - Código de retorno: 0
+[2026-09-10 18:19:45] Executando run
+[2026-09-10 18:19:45] [run] Tentativa de execução do programa.
+[2026-09-10 18:19:45] [run] Programa executado com êxito em 7292468ms - Código de retorno: 0
+[2026-09-10 18:19:59] Executando run
+[2026-09-10 18:19:59] [run] Tentativa de execução do programa.
+[2026-09-10 18:19:59] [run] Programa executado com êxito em 7394576ms - Código de retorno: 0
+[2026-09-10 19:18:11] Executando build
+[2026-09-10 19:18:11] [build] Iniciando compilação
+[2026-09-10 19:18:11] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 70969217ms - Código de retorno: 0
+[2026-09-10 19:32:59] Executando clean
+[2026-09-10 19:32:59] [clean] Iniciando limpeza do diretório build/
+[2026-09-10 19:32:59] [clean] Limpeza concluída com êxito em 9ms - Código de retorno: 0
+[2026-09-10 19:33:07] Executando build
+[2026-09-10 19:33:07] [build] Iniciando compilação
+[2026-09-10 19:33:07] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 85ms - Código de retorno: 0
+[2026-09-10 19:33:11] Executando rebuild
+[2026-09-10 19:33:11] [rebuild] Rebuild inicializado
+[2026-09-10 19:33:11] Executando clean
+[2026-09-10 19:33:11] [clean] Iniciando limpeza do diretório build/
+[2026-09-10 19:33:11] [clean] Limpeza concluída com êxito em 7ms - Código de retorno: 0
+[2026-09-10 19:33:11] Executando build
+[2026-09-10 19:33:11] [build] Iniciando compilação
+[2026-09-10 19:33:11] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 72ms - Código de retorno: 0
+[2026-09-10 19:33:14] Executando run
+[2026-09-10 19:33:14] [run] Tentativa de execução do programa.
+[2026-09-10 19:33:14] [run] Programa executado com êxito em 8ms - Código de retorno: 0
+[2026-09-10 19:33:34] Executando run
+[2026-09-10 19:33:34] [run] Tentativa de execução do programa.
+[2026-09-10 19:33:34] [run] Programa executado com êxito em 9ms - Código de retorno: 0
+[2026-09-10 19:33:36] Executando run
+[2026-09-10 19:33:36] [run] Tentativa de execução do programa.
+[2026-09-10 19:33:36] [run] Programa executado com êxito em 7ms - Código de retorno: 0
+[2026-09-10 19:33:37] Executando run
+[2026-09-10 19:33:37] [run] Tentativa de execução do programa.
+[2026-09-10 19:33:37] [run] Programa executado com êxito em 8ms - Código de retorno: 0

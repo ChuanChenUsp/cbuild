@@ -42,11 +42,11 @@ case "$COMANDO" in
     	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
     	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
     	# -o build/${project}: Especifica o caminho e o nome do binário de saída
-    	INICIO=$(date +%s%3N)  
+    	INICIO=$(date +%s%N | cut -c 1-13)
     	gcc -Iinclude src/*.c -o build/${project}    
         STATUS=$?
 
-        FIM=$(date +%s%3N)
+        FIM=$(date +%s%N | cut -c 1-13)
     
         TIME=$((FIM - INICIO))
 
@@ -72,10 +72,10 @@ if [ $STATUS -eq 0 ]; then
             echo "========================================" 
 	        echo ""    
             # Executa o programa binário  
-            INICIO=$(date +%s%3N)
+            INICIO=$(date +%s%N | cut -c 1-13)
             ./build/${project}   
             STATUS=$?
-            FIM=$(date +%s%3N)
+            FIM=$(date +%s%N | cut -c 1-13)
             TIME=$((FIM - INICIO))
             log_f "[$COMANDO] Programa executado com êxito em ${TIME}ms - Código de retorno: $STATUS"           
 	        echo ""     
@@ -92,10 +92,10 @@ if [ $STATUS -eq 0 ]; then
         echo "[cbuild] Limpando arquivos temporários. "
         log_f "[$COMANDO] Iniciando limpeza do diretório build/"  
 	# Remove todos os arquivos do diretório build/    
-        INICIO=$(date +%s%3N)
+        INICIO=$(date +%s%N | cut -c 1-13)
         rm -rf build/*   
         STATUS=$?
-        FIM=$(date +%s%3N)
+        FIM=$(date +%s%N | cut -c 1-13)
         TIME=$((FIM - INICIO))
         # Checa o código de retorno do comando rm  
         if [ $STATUS -eq 0 ]; then  
