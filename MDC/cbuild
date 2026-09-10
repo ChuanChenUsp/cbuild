@@ -31,30 +31,34 @@ fi
 case "$COMANDO" in
     build)
    
-    echo "[cbuild] Executando compilação. "   
-    log_f "Iniciando compilação" 
-    # Cria o diretório build (Se não existir);
-	mkdir -p build 
+        echo "[cbuild] Executando compilação. "   
+        log_f "Iniciando compilação" 
+        # Cria o diretório build (Se não existir);
+    	mkdir -p build 
 	 
  
-	# Executa o compilador GCC passando o diretório de cabeçalhos, os fontes e o destino do executável
-	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
-	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
-	# -o build/${project}: Especifica o caminho e o nome do binário de saída
-	   
-	gcc -Iinclude src/*.c -o build/${project}    
+    	# Executa o compilador GCC passando o diretório de cabeçalhos, os fontes e o destino do executável
+    	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
+    	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
+    	# -o build/${project}: Especifica o caminho e o nome do binário de saída
+    	INICIO=$(date +%s%3N)  
+    	gcc -Iinclude src/*.c -o build/${project}    
+        STATUS=$?
+
+        FIM=$(date +%s%3N)
     
+        TIME=$((FIM - INICIO))
+
 	# Se a saída do ultimo comando for 0 ... 
-	if [ $? -eq 0 ]; then  
-            echo "[cbuild] Compilação concluída com sucesso!"
-            echo "[cbuild] Executável gerado em: build/${project}"  
-            log_f "A compilação foi concluida com êxito."
-        else      
-            echo "[cbuild] Erro: Falha na compilação do projeto."
-            log_f "Erro: Falha na compilação"          
-            exit 1     
-        fi      
-        ;;     
+if [ $STATUS -eq 0 ]; then  
+        echo "[cbuild] Compilação concluída com sucesso!"
+        echo "[cbuild] Executável gerado em: build/${project}"  
+        log_f "A compilação foi concluida com êxito - (build/$project) - Tempo: ${TIME}ms"
+    else      
+        echo "[cbuild] Erro: Falha na compilação do projeto."            log_f "Erro: Falha na compilação - Tempo: ${TIME}ms"          
+        exit 1     
+    fi      
+    ;;     
     run)    
         echo "[cbuild] Executando o programa. " 
         log_f "Tentativa de execução do programa."
@@ -62,12 +66,15 @@ case "$COMANDO" in
         #Se existir  o arquivo "project' em build... 
 	if [ -f "build/${project}" ]; then   
             echo "[cbuild] Executando 'build/${project}':"
-            log_f "Programa executado com êxito"           
             echo "========================================" 
-	    echo ""    
+	        echo ""    
             # Executa o programa binário  
-            ./build/${project}     
-	    echo ""     
+            INICIO=$(date +%s%3N)
+            ./build/${project}   
+            FIM=$(date +%s%3N)
+            TIME=$((FIM - INICIO))
+            log_f "Programa executado com êxito em ${TIME}ms."           
+	        echo ""     
             echo "========================================" 
         else  
             # Notifica o erro caso o binário não exista
@@ -81,12 +88,15 @@ case "$COMANDO" in
         echo "[cbuild] Limpando arquivos temporários. "
         log_f "Iniciando limpeza do diretório build/"  
 	# Remove todos os arquivos do diretório build/    
+        INICIO=$(date +%s%3N)
         rm -rf build/*   
-   
+        STATUS=$?
+        FIM=$(date +%s%3N)
+        TIME=$((FIM - INICIO))
         # Checa o código de retorno do comando rm  
-        if [ $? -eq 0 ]; then  
+        if [ $STATUS -eq 0 ]; then  
             echo "[cbuild] Limpeza concluída com sucesso!"
-            log_f "Limpeza concluída com êxito"  
+            log_f "Limpeza concluída com êxito em ${TIME}ms."  
         else  
             echo "[cbuild] Erro: Falha ao limpar a pasta build/." 
             log_f "Erro: Falha ao limpar a pasta build/."  
