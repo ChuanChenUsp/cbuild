@@ -73,9 +73,9 @@ Limpa e Recompila o projeto. Na prática, realiza um comando ./cbuild clean suce
 
 ### info
 
-Exibe um relatório detalhado sobre o estado atual do projeto, quantidade e tamanho de arquivos. Note que ./cbuild info atua sem modificar ou apagar nenhum arquivo.
 
 
 ```Shell
 ./cbuild info
 ```
+Exibe um relatório detalhado sobre o estado atual do projeto, quantidade e tamanho de arquivos. Note que ./cbuild info atua sem modificar ou apagar nenhum arquivo.
