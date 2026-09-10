@@ -69,9 +69,12 @@ Remover todos os arquivos do diretório *build/*
 ./cbuild rebuild
 ```
 
-Recompilar o projeto. Na prática, realiza um clean sucedido pelo um build.
+Limpa e Recompila o projeto. Na prática, realiza um comando ./cbuild clean sucedido pelo um ./cbuild build.
 
 ### info
+
+Exibe um relatório detalhado sobre o estado atual do projeto, quantidade e tamanho de arquivos. Note que ./cbuild info atua sem modificar ou apagar nenhum arquivo.
+
 
 ```Shell
 ./cbuild info
