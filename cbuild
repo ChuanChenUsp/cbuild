@@ -7,6 +7,8 @@ COMANDO="$1"
 
 # Se o usuario digitou com zero length arguments
 
+project=$(basename "$PWD")
+
 if [ -z "$COMANDO" ]; then
     echo "Erro: Nenhum comando informado."
     echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
@@ -23,14 +25,14 @@ case "$COMANDO" in
 	# Executa o compilador GCC passando o diretório de cabeçalhos, os fontes e o destino do executável
 	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
 	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
-	# -o build/project: Especifica o caminho e o nome do binário de saída
+	# -o build/${project}: Especifica o caminho e o nome do binário de saída
 	  
-	gcc -Iinclude src/*.c -o build/project  
+	gcc -Iinclude src/*.c -o build/${project}    
    
 	# Se a saída do ultimo comando for 0 ...
 	if [ $? -eq 0 ]; then 
             echo "[cbuild] Compilação concluída com sucesso!"
-            echo "[cbuild] Executável gerado em: build/project"  
+            echo "[cbuild] Executável gerado em: build/${project}"  
         else    
             echo "[cbuild] Erro: Falha na compilação do projeto."
             exit 1   
@@ -39,17 +41,17 @@ case "$COMANDO" in
     run)    
         echo "[cbuild] Executando o programa. " 
         #Se existir  o arquivo "project' em build... 
-	if [ -f "build/project" ]; then   
-            echo "[cbuild] Executando 'build/project':"
+	if [ -f "build/${project}" ]; then   
+            echo "[cbuild] Executando 'build/${project}':"
             echo "========================================" 
 	    echo ""    
             # Executa o programa binário  
-            ./build/project     
+            ./build/${project}     
 	    echo ""     
             echo "========================================" 
         else  
             # Notifica o erro caso o binário não exista
-            echo "[cbuild] Erro: Executável 'build/project' não encontrado."
+            echo "[cbuild] Erro: Executável 'build/${project}' não encontrado."
             echo "[cbuild] Execute './cbuild build' antes de tentar executar."
             exit 1     
         fi     
@@ -97,11 +99,11 @@ case "$COMANDO" in
         echo "Arquivos de cabeçalho (.h) em include/: $QTD_INC"
 
         # Checagem do estado do executável
-        if [ -f "build/project" ]; then
+        if [ -f "build/${project}" ]; then
 	# Calcula o tamanho do arquivo em disco (-h) e filtra apenas o valor numérico com cut -f1 
-           TAMANHO=$(du -h "build/project" | cut -f1)
+           TAMANHO=$(du -h "build/${project}" | cut -f1)
             echo "Status do build: Compilado"
-            echo "Executável: build/project (Tamanho: $TAMANHO)"
+            echo "Executável: build/${project} (Tamanho: $TAMANHO)"
         else   
             echo "Status do build: Pendente (execute './cbuild build')"
         fi   
