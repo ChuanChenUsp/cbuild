@@ -55,7 +55,8 @@ if [ $STATUS -eq 0 ]; then
         echo "[cbuild] Executável gerado em: build/${project}"  
         log_f "A compilação foi concluida com êxito - (build/$project) - Tempo: ${TIME}ms"
     else      
-        echo "[cbuild] Erro: Falha na compilação do projeto."            log_f "Erro: Falha na compilação - Tempo: ${TIME}ms"          
+        echo "[cbuild] Erro: Falha na compilação do projeto." 
+        log_f "Erro: Falha na compilação - Tempo: ${TIME}ms"          
         exit 1     
     fi      
     ;;     
