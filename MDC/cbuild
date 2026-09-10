@@ -161,7 +161,7 @@ if [ $STATUS -eq 0 ]; then
 
             # Data da última compilação = data de modificação do executável.
 	        # "-r arquivo" faz o 'date' imprimir o mtime do arquivo em vez do horário atual.
-	        DATA_COMPILACAO=$(date -r "build/${project}" "+%d/%m/%Y %H:%M:%S")
+	        DATA_COMPILACAO=$(date -r "build/${project}" "+%Y-%m-%d %H:%M:%S")
 	        echo "Última compilação: $DATA_COMPILACAO"
         else   
             echo "Status do build: indisponível (execute './cbuild build')"
