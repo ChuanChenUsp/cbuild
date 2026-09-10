@@ -32,7 +32,7 @@ case "$COMANDO" in
     build)
    
         echo "[cbuild] Executando compilação. "   
-        log_f "Iniciando compilação" 
+        log_f "[$COMANDO] Iniciando compilação" 
         # Cria o diretório build (Se não existir);
     	mkdir -p build 
 	 
@@ -53,16 +53,16 @@ case "$COMANDO" in
 if [ $STATUS -eq 0 ]; then  
         echo "[cbuild] Compilação concluída com sucesso!"
         echo "[cbuild] Executável gerado em: build/${project}"  
-        log_f "A compilação foi concluida com êxito - (build/$project) - Tempo: ${TIME}ms"
+        log_f "[$COMANDO] A compilação foi concluida com êxito - (build/$project) - Tempo: ${TIME}ms - Código de retorno: $STATUS"
     else      
         echo "[cbuild] Erro: Falha na compilação do projeto." 
-        log_f "Erro: Falha na compilação - Tempo: ${TIME}ms"          
+        log_f "[$COMANDO] Erro: Falha na compilação - Tempo: ${TIME}ms - Código de retorno: $STATUS"          
         exit 1     
     fi      
     ;;     
     run)    
         echo "[cbuild] Executando o programa. " 
-        log_f "Tentativa de execução do programa."
+        log_f "[$COMANDO] Tentativa de execução do programa."
           
         #Se existir  o arquivo "project' em build... 
 	if [ -f "build/${project}" ]; then   
@@ -72,22 +72,23 @@ if [ $STATUS -eq 0 ]; then
             # Executa o programa binário  
             INICIO=$(date +%s%3N)
             ./build/${project}   
+            STATUS=$?
             FIM=$(date +%s%3N)
             TIME=$((FIM - INICIO))
-            log_f "Programa executado com êxito em ${TIME}ms."           
+            log_f "[$COMANDO] Programa executado com êxito em ${TIME}ms - Código de retorno: $STATUS"           
 	        echo ""     
             echo "========================================" 
         else  
             # Notifica o erro caso o binário não exista
             echo "[cbuild] Erro: Executável 'build/${project}' não encontrado."
             echo "[cbuild] Execute './cbuild build' antes de tentar executar."
-            log_f "ERRO: executável não encontrado."    
+            log_f "[$COMANDO] ERRO: executável não encontrado."    
             exit 1      
         fi      
 	;;      
     clean)      
         echo "[cbuild] Limpando arquivos temporários. "
-        log_f "Iniciando limpeza do diretório build/"  
+        log_f "[$COMANDO] Iniciando limpeza do diretório build/"  
 	# Remove todos os arquivos do diretório build/    
         INICIO=$(date +%s%3N)
         rm -rf build/*   
@@ -97,29 +98,30 @@ if [ $STATUS -eq 0 ]; then
         # Checa o código de retorno do comando rm  
         if [ $STATUS -eq 0 ]; then  
             echo "[cbuild] Limpeza concluída com sucesso!"
-            log_f "Limpeza concluída com êxito em ${TIME}ms."  
+            log_f "[$COMANDO] Limpeza concluída com êxito em ${TIME}ms - Código de retorno: $STATUS"  
         else  
             echo "[cbuild] Erro: Falha ao limpar a pasta build/." 
-            log_f "Erro: Falha ao limpar a pasta build/."  
+            log_f "[$COMANDO] Erro: Falha ao limpar a pasta build/. - Código de retorno: $STATUS"  
             exit 1  
         fi 
         ;; 
     rebuild) 
         echo "[cbuild] Iniciando rebuild. "  
-        log_f "Rebuild inicializado"  
+        log_f "[$COMANDO] Rebuild inicializado"  
 	# Chama o comando clean e, se tiver sucesso, chama o comando build
         "$0" clean && "$0" build 
+        STATUS=$?
  
         # Checa se a operação combinada falhou
-        if [ $? -ne 0 ]; then 
+        if [ $STATUS -ne 0 ]; then 
             echo "[cbuild] Erro: Falha ao reconstruir o projeto."
-            log_f "Erro: Falha ao reconstruir projeto."  
+            log_f "[$COMANDO] Erro: Falha ao reconstruir projeto. - Código de retorno: $STATUS"  
             exit 1  
         fi	   
         ;;   
     info)   
         echo "[cbuild] Exibindo informações do projeto. "
-        log_f "Consulta de informação (info)"  
+        log_f "[$COMANDO] Consulta de informação (info)"  
      	echo "========================================="
       
         # Contagem de arquivos de origem 
@@ -147,7 +149,7 @@ if [ $STATUS -eq 0 ]; then
 	 ;;   
     *)   
         echo "Erro: Comando '$COMANDO' desconhecido."
-       registrar_log "ERRO: Comando inválido ou ausente ($COMANDO)"
+       log_f "ERRO: Comando inválido ou ausente ($COMANDO)"
         echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
         exit 1   
         ;;   
