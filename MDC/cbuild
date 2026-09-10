@@ -1,48 +1,68 @@
 #!/bin/bash
 
 
+# Função  para registrar eventos com data e hora
+
+log_f() {
+
+    # Pega o primeiro texto após a chamada da função, e adiciona no fim 
+    # de um arquivo .log no diretório "logs"
+
+    MENSAGEM="$1"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $MENSAGEM" >> logs/cbuild.log
+}
 
 #O primeiro argumento passado fica armazenado em $1
 COMANDO="$1"
-
+  
+# chamada de log_f  
+log_f "Executando $COMANDO"
+ 
 # Se o usuario digitou com zero length arguments
-
+ 
 project=$(basename "$PWD")
-
+ 
 if [ -z "$COMANDO" ]; then
     echo "Erro: Nenhum comando informado."
     echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
     exit 1
 fi
-
+ 
 case "$COMANDO" in
     build)
-        echo "[cbuild] Executando compilação. "
-	# Cria o diretório build (Se não existir);
-	mkdir -p build
-	
-
+   
+    echo "[cbuild] Executando compilação. "   
+    log_f "Iniciando compilação" 
+    # Cria o diretório build (Se não existir);
+	mkdir -p build 
+	 
+ 
 	# Executa o compilador GCC passando o diretório de cabeçalhos, os fontes e o destino do executável
 	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
 	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
 	# -o build/${project}: Especifica o caminho e o nome do binário de saída
-	  
+	   
 	gcc -Iinclude src/*.c -o build/${project}    
-   
-	# Se a saída do ultimo comando for 0 ...
-	if [ $? -eq 0 ]; then 
+    
+	# Se a saída do ultimo comando for 0 ... 
+	if [ $? -eq 0 ]; then  
             echo "[cbuild] Compilação concluída com sucesso!"
             echo "[cbuild] Executável gerado em: build/${project}"  
-        else    
+            log_f "A compilação foi concluida com êxito."
+        else      
             echo "[cbuild] Erro: Falha na compilação do projeto."
-            exit 1   
-        fi    
-        ;;    
+            log_f "Erro: Falha na compilação"          
+            exit 1     
+        fi      
+        ;;     
     run)    
         echo "[cbuild] Executando o programa. " 
+        log_f "Tentativa de execução do programa."
+          
         #Se existir  o arquivo "project' em build... 
 	if [ -f "build/${project}" ]; then   
             echo "[cbuild] Executando 'build/${project}':"
+            log_f "Programa executado com êxito"           
             echo "========================================" 
 	    echo ""    
             # Executa o programa binário  
@@ -53,45 +73,50 @@ case "$COMANDO" in
             # Notifica o erro caso o binário não exista
             echo "[cbuild] Erro: Executável 'build/${project}' não encontrado."
             echo "[cbuild] Execute './cbuild build' antes de tentar executar."
-            exit 1     
-        fi     
-	;;     
-    clean)     
+            log_f "ERRO: executável não encontrado."    
+            exit 1      
+        fi      
+	;;      
+    clean)      
         echo "[cbuild] Limpando arquivos temporários. "
+        log_f "Iniciando limpeza do diretório build/"  
+	# Remove todos os arquivos do diretório build/    
+        rm -rf build/*   
    
-	# Remove todos os arquivos do diretório build/   
-        rm -rf build/*  
-  
-        # Checa o código de retorno do comando rm 
-        if [ $? -eq 0 ]; then 
-            echo "[cbuild] Limpeza concluída com sucesso!" 
-        else 
-            echo "[cbuild] Erro: Falha ao limpar a pasta build/."
-            exit 1 
-        fi
-        ;;
-    rebuild)
-        echo "[cbuild] Reconstruindo o projeto. "
-
+        # Checa o código de retorno do comando rm  
+        if [ $? -eq 0 ]; then  
+            echo "[cbuild] Limpeza concluída com sucesso!"
+            log_f "Limpeza concluída com êxito"  
+        else  
+            echo "[cbuild] Erro: Falha ao limpar a pasta build/." 
+            log_f "Erro: Falha ao limpar a pasta build/."  
+            exit 1  
+        fi 
+        ;; 
+    rebuild) 
+        echo "[cbuild] Iniciando rebuild. "  
+        log_f "Rebuild inicializado"  
 	# Chama o comando clean e, se tiver sucesso, chama o comando build
-        "$0" clean && "$0" build
-
+        "$0" clean && "$0" build 
+ 
         # Checa se a operação combinada falhou
-        if [ $? -ne 0 ]; then
+        if [ $? -ne 0 ]; then 
             echo "[cbuild] Erro: Falha ao reconstruir o projeto."
-            exit 1
-        fi	
-        ;;
-    info)
+            log_f "Erro: Falha ao reconstruir projeto."  
+            exit 1  
+        fi	   
+        ;;   
+    info)   
         echo "[cbuild] Exibindo informações do projeto. "
+        log_f "Consulta de informação (info)"  
      	echo "========================================="
-
-        # Contagem de arquivos de origem
+      
+        # Contagem de arquivos de origem 
 	# Lista 1 arquivo por linha, oculta erros de busca (2>/dev/null) e conta as linhas com wc -l
-
+  
         # Obtém o total de arquivos de código-fonte (.c) no diretório src/
         QTD_SRC=$(ls -1 src/*.c 2>/dev/null | wc -l)
-
+ 
 	# Obtém o total de arquivos de cabeçalho (.h) no diretório include/
         QTD_INC=$(ls -1 include/*.h 2>/dev/null | wc -l)
 
@@ -111,6 +136,7 @@ case "$COMANDO" in
 	 ;;   
     *)   
         echo "Erro: Comando '$COMANDO' desconhecido."
+       registrar_log "ERRO: Comando inválido ou ausente ($COMANDO)"
         echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
         exit 1   
         ;;   
