@@ -42,7 +42,7 @@ case "$COMANDO" in
     	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
     	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
     	# -o build/${project}: Especifica o caminho e o nome do binário de saída
-    	INICIO=$(date +%s%N | cut -c 1-13)
+    	INICIO=$(date +%s%N | cut -c 1-13) # Número mágico 13 pega tempo em milisegundo
     	gcc -Iinclude src/*.c -o build/${project}    
         STATUS=$?
 
