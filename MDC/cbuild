@@ -163,8 +163,14 @@ case "$COMANDO" in
 	        # "-r arquivo" faz o 'date' imprimir o mtime do arquivo em vez do horário atual.
 	        DATA_COMPILACAO=$(date -r "build/${project}" "+%Y-%m-%d %H:%M:%S")
 	        echo "Última compilação: $DATA_COMPILACAO"
+
+            # Registra informações do build no log
+            log_f "[$COMANDO] Build disponível - Executável: build/$project - Tamanho: $TAMANHO - Última compilação: $DATA_COMPILACAO"
         else   
             echo "Status do build: indisponível (execute './cbuild build')"
+
+            # Em caso de build não encontrado registra informação no log
+            log_f "[$COMANDO] Build indisponível - executável build/$project não encontrado."
         fi   
 
         # Verifica se o arquivo de log existe
@@ -172,7 +178,7 @@ case "$COMANDO" in
 
             # Procura a última execução bem-sucedida
             ULTIMA_EXECUCAO=$(grep '\[run\] Programa executado com êxito' logs/cbuild.log | tail -n 1)
-
+            
 
             if [ -n "$ULTIMA_EXECUCAO" ]; then
 
@@ -180,11 +186,14 @@ case "$COMANDO" in
                 DATA_EXECUCAO=$(echo "$ULTIMA_EXECUCAO" | cut -d']' -f1 | tr -d '[')
 
                 echo "Última execução: $DATA_EXECUCAO"
-
+                
+                log_f "[$COMANDO] Última execução encontrada: $DATA_EXECUCAO"
+            
             else
 
                 echo "Última execução: indisponível (execute './cbuild run')"
 
+                log_f "[$COMANDO] Nenhuma execução bem-sucedida encontrada no log."
             fi
 
         else
@@ -194,11 +203,15 @@ case "$COMANDO" in
         fi
 
         echo "========================================="
+
+        #Registra o fim do comando info
+        log_f "[$COMANDO] Consulta de informações concluída com êxito."
 	 ;;   
     *)   
         echo "Erro: Comando '$COMANDO' desconhecido."
-       log_f "ERRO: Comando inválido ou ausente ($COMANDO)"
+        log_f "ERRO: Comando inválido ou ausente ($COMANDO)"
         echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
         exit 1   
         ;;   
 esac       
+ 
