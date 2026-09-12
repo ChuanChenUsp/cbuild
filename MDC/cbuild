@@ -42,7 +42,7 @@ case "$COMANDO" in
     	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
     	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
     	# -o build/${project}: Especifica o caminho e o nome do binário de saída
-    	INICIO=$(date +%s%N | cut -c 1-13)
+    	INICIO=$(date +%s%N | cut -c 1-13) # Número mágico 13 pega tempo em milisegundo
     	gcc -Iinclude src/*.c -o build/${project}    
         STATUS=$?
 
@@ -52,7 +52,7 @@ case "$COMANDO" in
 
 	# Se a saída do ultimo comando for 0 ... 
 
-if [ $STATUS -eq 0 ]; then  
+    if [ $STATUS -eq 0 ]; then  
         echo "[cbuild] Compilação concluída com sucesso!"
         echo "[cbuild] Executável gerado em: build/${project}"  
         log_f "[$COMANDO] A compilação foi concluida com êxito - (build/$project) - Tempo: ${TIME}ms - Código de retorno: $STATUS"

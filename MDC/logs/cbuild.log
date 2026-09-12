@@ -46,19 +46,4 @@
 [2026-09-10 19:33:37] [run] Programa executado com êxito em 8ms - Código de retorno: 0
 [2026-09-10 19:38:26] Executando info
 [2026-09-10 19:40:14] Executando info
-[2026-09-10 20:20:19] Executando build
-[2026-09-10 20:20:19] [build] Iniciando compilação
-[2026-09-10 20:20:20] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 345ms - Código de retorno: 0
-[2026-09-10 20:20:26] Executando info
-[2026-09-10 20:33:10] Executando info
-[2026-09-10 20:33:10] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-10 20:20:20
-[2026-09-10 20:33:10] [info] Última execução encontrada: 2026-09-10 19:33:37
-[2026-09-10 20:33:10] [info] Consulta de informações concluída com êxito.
-[2026-09-10 20:40:07] Executando info
-[2026-09-10 20:40:07] [info] Build indisponível - executável build/MDC não encontrado.
-[2026-09-10 20:40:07] [info] Última execução encontrada: 2026-09-10 19:33:37
-[2026-09-10 20:40:07] [info] Consulta de informações concluída com êxito.
-[2026-09-10 20:40:25] Executando info
-[2026-09-10 20:40:25] [info] Build indisponível - executável build/MDC não encontrado.
-[2026-09-10 20:40:25] [info] Última execução encontrada: 2026-09-10 19:33:37
-[2026-09-10 20:40:25] [info] Consulta de informações concluída com êxito.
+[2026-09-10 19:42:03] Executando info

@@ -8,20 +8,24 @@ Para o melhor funcionamento desta ferramenta, o projeto de **C** deve ter seguin
 
 ```
   meu_projeto/
- 	|――――src/
- 		|―――― main.c
- 		|―――― ...
-     |―――― include/
- 		|―――― algum_cabeçalho.h
- 		|―――― ...
+	|――――src/
+		|―――― main.c
+		|―――― ...
+	|―――― include/
+		|―――― algum_cabeçalho.h
+		|―――― ...
+	|―――― cbuild
 ```
 
 ## Sintaxe de Comando e Opções Disponíveis
-Esta ferramenta tem seguinte sintaxe: 
+
+Esta ferramenta tem seguinte sintaxe:
+
 ```Shell
 ./cbuild [OPÇÃO]
 ```
-As opções disponíveis são apresentadas a seguir:  
+
+As opções disponíveis são apresentadas a seguir:
 
 ### build
 
@@ -73,9 +77,28 @@ Limpa e Recompila o projeto. Na prática, realiza um comando ./cbuild clean suce
 
 ### info
 
-
-
 ```Shell
 ./cbuild info
 ```
+
 Exibe um relatório detalhado sobre o estado atual do projeto, quantidade e tamanho de arquivos. Note que ./cbuild info atua sem modificar ou apagar nenhum arquivo.
+
+## Erros Comuns
+
+### Permission denied
+
+É possível encontrar seguinte erro ao executar cbuild:
+
+```Shell
+bash: ./cbuild: Permission denied
+```
+
+Isso acontece pois cbuild não tem permissão de executável. Este problema pode ser resolvido com
+
+```Shell
+chmod +x cbuild
+```
+
+### Fatal error: src/*.c: No such file or directory
+
+Existem diferentes causas desse error, normalmente quando script não encontrou arquivo fonte no diretorio *srcs/*. Porém, uma outro causa mais sútil é quando cbuild não está no diretório raiz do projeto.
