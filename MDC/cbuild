@@ -1,160 +1,142 @@
 #!/bin/bash
 
-# Função  para registrar eventos com data e hora
+###Váriáveis globais###
+COMANDO="$1" # Opções de 1° argumento: [build|run|clean|rebuild|info]
+PROJECT=$(basename "$PWD")
 
+###Funções###
+# Função para registrar eventos com data e hora
 log_f() {
-    
     # Cria o diretório logs (Se não existir);
     mkdir -p logs 
+
     # Pega o primeiro texto após a chamada da função, e adiciona no fim 
     # de um arquivo .log no diretório "logs"
-
     MENSAGEM="$1"
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $MENSAGEM" >> logs/cbuild.log
 }
 
-#O primeiro argumento passado fica armazenado em $1
-COMANDO="$1"
-  
-# chamada de log_f  
-log_f "Executando $COMANDO"
- 
-# Se o usuario digitou com zero length arguments
- 
-project=$(basename "$PWD")
- 
-if [ -z "$COMANDO" ]; then
-    echo "Erro: Nenhum comando informado."
-    echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
-    exit 1
-fi
- 
-case "$COMANDO" in
-    build)
-   
-        echo "[cbuild] Executando compilação. "   
-        log_f "[$COMANDO] Iniciando compilação" 
-        # Cria o diretório build (Se não existir);
-    	mkdir -p build 
-	 
- 
-    	# Executa o compilador GCC passando o diretório de cabeçalhos, os fontes e o destino do executável
-    	# -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
-    	# src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
-    	# -o build/${project}: Especifica o caminho e o nome do binário de saída
-    
-        if command -v gcc >/dev/null 2>&1; then
-            INICIO=$(date +%s%N | cut -c 1-13) # Número mágico 13 pega tempo em milisegundo
-        
+build_f() {
+    echo "[cbuild] Executando compilação. "   
+    log_f "[$COMANDO] Iniciando compilação" 
+    mkdir -p build # Cria o diretório build (Se não existir);
 
+    # Executa o compilador GCC passando o diretório de cabeçalhos, os fontes e o destino do executável
+    # -Iincprojecti a pasta 'include/' na busca por arquivos de caproject)
+    # src/*.c: Seleciona todos os arquivos de código-fonte (.c) da pasta 'src/'
+    # -o build/${PROJECT}: Especifica o caminho e o nome do binário de saída
+    if command -v gcc >/dev/null 2>&1; then
+        local INICIO=$(date +%s%N | cut -c 1-13) # Número mágico 13 pega tempo em milisegundo
 
-
-            FILES=$(find src -type f -name "*.c")
-            if [[ -z "$FILES" ]]; then
-                echo "[cbuild] Erro: Nenhum arquivo fonte (.c) encontrado na pasta src/."
-                log_f "[$COMANDO] Erro: Ausência de arquivos fonte."
-                exit 1
-            fi
-
-            gcc -Iinclude $FILES -o build/${project}    
-            STATUS=$?
-
-            FIM=$(date +%s%N | cut -c 1-13)
-    
-            TIME=$((FIM - INICIO))
-
-        	# Se a saída do ultimo comando for 0 ... 
- 
-            if [ $STATUS -eq 0 ]; then 
-                        echo "[cbuild] Compilação concluída com sucesso!"
-                        echo "[cbuild] Executável gerado em: build/${project}"  
-                        log_f "[$COMANDO] A compilação foi concluida com êxito - (build/$project) - Tempo: ${TIME}ms - Código de retorno: $STATUS"
-            else              
-                        echo "[cbuild] Erro: Falha na compilação do projeto." 
-                        log_f "[$COMANDO] Erro: Falha na compilação - Tempo: ${TIME}ms - Código de retorno: $STATUS"                         
-                        exit 1             
-            fi              
-        else 
-            echo "Erro: GCC não está instalado."
-            echo "Execute 'sudo apt update && sudo apt install build-essential'"
-            log_f "[$COMANDO] Erro: GCC não está instalado."
+        local FILES=$(find src -type f -name "*.c")
+        if [[ -z "$FILES" ]]; then
+            echo "[cbuild] Erro: Nenhum arquivo fonte (.c) encontrado na pasta src/."
+            log_f "[$COMANDO] Erro: Ausência de arquivos fonte."
             exit 1
-            fi
-            ;;
-    run)     
-        echo "[cbuild] Executando o programa. "
-        log_f "[$COMANDO] Tentativa de execução do programa."
-           
-        #Se existir  o arquivo "project' em build... 
-	if [ -f "build/${project}" ]; then  
-            echo "[cbuild] Executando 'build/${project}':"
-            echo "========================================" 
-	        echo ""     
-            # Executa o programa binário 
-            INICIO=$(date +%s%N | cut -c 1-13)
-            ./build/${project}   
-            STATUS=$?
-            FIM=$(date +%s%N | cut -c 1-13)
-            TIME=$((FIM - INICIO))
-            log_f "[$COMANDO] Programa executado com êxito em ${TIME}ms - Código de retorno: $STATUS"           
-	        echo ""     
-            echo "========================================" 
-        else  
-            # Notifica o erro caso o binário não exista
-            echo "[cbuild] Erro: Executável 'build/${project}' não encontrado."
-            echo "[cbuild] Execute './cbuild build' antes de tentar executar."
-            log_f "[$COMANDO] ERRO: executável não encontrado."    
-            exit 1      
-        fi      
-	;;      
-    clean)      
-        echo "[cbuild] Limpando arquivos temporários. "
-        log_f "[$COMANDO] Iniciando limpeza do diretório build/"  
-	# Remove todos os arquivos do diretório build/    
-        INICIO=$(date +%s%N | cut -c 1-13)
-        rm -rf build/*   
-        STATUS=$?
-        FIM=$(date +%s%N | cut -c 1-13)
-        TIME=$((FIM - INICIO))
-        # Checa o código de retorno do comando rm  
+        fi
+
+        gcc -Iinclude $FILES -o build/${PROJECT}    
+
+        local STATUS=$?
+        local FIM=$(date +%s%N | cut -c 1-13)
+        local TIME=$((FIM - INICIO))
+
+        # Se a saída do ultimo comando for 0 ... 
+
         if [ $STATUS -eq 0 ]; then  
-            echo "[cbuild] Limpeza concluída com sucesso!"
-            log_f "[$COMANDO] Limpeza concluída com êxito em ${TIME}ms - Código de retorno: $STATUS"  
-        else  
-            echo "[cbuild] Erro: Falha ao limpar a pasta build/." 
-            log_f "[$COMANDO] Erro: Falha ao limpar a pasta build/. - Código de retorno: $STATUS"  
-            exit 1  
-        fi 
-        ;; 
-    rebuild) 
-        echo "[cbuild] Iniciando rebuild. "  
-        log_f "[$COMANDO] Rebuild inicializado"  
-	# Chama o comando clean e, se tiver sucesso, chama o comando build
-        "$0" clean && "$0" build 
-        STATUS=$?
- 
-        # Checa se a operação combinada falhou
-        if [ $STATUS -ne 0 ]; then 
-            echo "[cbuild] Erro: Falha ao reconstruir o projeto."
-            log_f "[$COMANDO] Erro: Falha ao reconstruir projeto. - Código de retorno: $STATUS"  
-            exit 1  
-        fi	   
-        ;;   
-   info)
-        echo "[cbuild] Exibindo informações do projeto. "
+            echo "[cbuild] Compilação concluída com sucesso!"
+            echo "[cbuild] Executável gerado em: build/${PROJECT}"  
+            log_f "[$COMANDO] A compilação foi concluida com êxito - (build/$PROJECT) - Tempo: ${TIME}ms - Código de retorno: $STATUS"
+        else
+            echo "[cbuild] Erro: Falha na compilação do projeto." 
+            log_f "[$COMANDO] Erro: Falha na compilação - Tempo: ${TIME}ms - Código de retorno: $STATUS"          
+            exit 1     
+        fi
+    else
+        echo "Erro: GCC não está instalado."
+        echo "Execute 'sudo apt update && sudo apt install build-essential'"
+        log_f "[$COMANDO] Erro: GCC não está instalado."
+        exit 1
+    fi      
+}
+
+run_f() {
+    echo "[cbuild] Executando o programa. " 
+    log_f "[$COMANDO] Tentativa de execução do programa."
+          
+	if [ -f "build/${PROJECT}" ]; then #Executável "PROJECT' existe 
+        echo "[cbuild] Executando 'build/${PROJECT}':"
+        echo "========================================" 
+        echo ""
+        local INICIO=$(date +%s%N | cut -c 1-13)
+       
+        ./build/${PROJECT}  # Executa o programa binário  
+       
+        local STATUS=$?
+        local FIM=$(date +%s%N | cut -c 1-13)
+        local TIME=$((FIM - INICIO))
+        log_f "[$COMANDO] Programa executado com êxito em ${TIME}ms - Código de retorno: $STATUS"           
+        echo ""     
+        echo "========================================" 
+    else  # Erro caso o binário não exista
+        echo "[cbuild] Erro: Executável 'build/${PROJECT}' não encontrado."
+        echo "[cbuild] Execute './cbuild build' antes de tentar executar."
+        log_f "[$COMANDO] ERRO: executável não encontrado."    
+        exit 1      
+    fi
+}
+
+clean_f() {
+    echo "[cbuild] Limpando arquivos temporários. "
+    log_f "[$COMANDO] Iniciando limpeza do diretório build/"  
+    local INICIO=$(date +%s%N | cut -c 1-13)
+    
+    rm -rf build/* # Remove todos os arquivos do diretório build/    
+    
+    local STATUS=$?
+    local FIM=$(date +%s%N | cut -c 1-13)
+    local TIME=$((FIM - INICIO))
+    # Checa o código de retorno do comando rm  
+    if [ $STATUS -eq 0 ]; then  
+        echo "[cbuild] Limpeza concluída com sucesso!"
+        log_f "[$COMANDO] Limpeza concluída com êxito em ${TIME}ms - Código de retorno: $STATUS"  
+    else  
+        echo "[cbuild] Erro: Falha ao limpar a pasta build/." 
+        log_f "[$COMANDO] Erro: Falha ao limpar a pasta build/. - Código de retorno: $STATUS"  
+        exit 1  
+    fi 
+}
+
+rebuild_f() {
+    echo "[cbuild] Iniciando rebuild. "  
+    log_f "[$COMANDO] Rebuild inicializado"  
+    
+    "$0" clean && "$0" build # Chama o comando clean e, se tiver sucesso, chama o comando build
+    local STATUS=$?
+
+    # Checa se a operação combinada falhou
+    if [ $STATUS -ne 0 ]; then 
+        echo "[cbuild] Erro: Falha ao reconstruir o projeto."
+        log_f "[$COMANDO] Erro: Falha ao reconstruir projeto. - Código de retorno: $STATUS"  
+        exit 1  
+    fi	
+}
+
+info_f() {
+    echo "[cbuild] Exibindo informações do projeto. "
      	echo "========================================="
 
         # Contagem de arquivos de origem
 	    # Lista 1 arquivo por linha, oculta erros de busca (2>/dev/null) e conta as linhas com wc -l
 
-        # Obtém o total de arquivos .c recursivamente em src/ e subpastas
-        QTD_SRC=$(find src -type f -name "*.c" 2>/dev/null | wc -l)
+        # Obtém o total de arquivos de código-fonte (.c) no diretório src/
+        local QTD_SRC=$(find src -type f -name "*.c" 2>/dev/null | wc -l)
 
-        # Obtém o total de arquivos .h recursivamente em include/ e subpastas
-        QTD_INC=$(find include -type f -name "*.h" 2>/dev/null | wc -l)
-       
-         # Obtém o total de arquivos
-        QTD_TOT=$((QTD_INC + QTD_SRC))
+	    # Obtém o total de arquivos de cabeçalho (.h) no diretório include/
+        local QTD_INC=$(find include -type f -name "*.h" 2>/dev/null | wc -l)
+
+        # Obtém o total de arquivos
+        local QTD_TOT=$((QTD_INC + QTD_SRC))
 
         echo "Arquivos fonte (.c) em src/: $QTD_SRC"
         echo "Arquivos de cabeçalho (.h) em include/: $QTD_INC"
@@ -164,7 +146,7 @@ case "$COMANDO" in
         # Soma todas as linhas dos arquivos .c e .h encontrados no diretórios e subdiretórios excluindo ./builds e ./logs
         # O críterio adotado pelo grupo contabiliza linhas em branco, comentários e diretivas de pré processamento
     
-        LINHAS_CODIGO=$(find . -type f \( -name "*.c" -o -name "*.h" \) \
+        local LINHAS_CODIGO=$(find . -type f \( -name "*.c" -o -name "*.h" \) \
         -not -path "./build/*" \
         -not -path "./logs/*" \
         -exec cat {} + | wc -l)
@@ -172,65 +154,81 @@ case "$COMANDO" in
         echo "Linhas de código: $LINHAS_CODIGO"
 
         # Checagem do estado do executável
-        if [ -f "build/${project}" ]; then
+        if [ -f "build/${PROJECT}" ]; then
 	        # Calcula o tamanho do arquivo em disco (-h) e filtra apenas o valor numérico com cut -f1 
-            TAMANHO=$(du -h "build/${project}" | cut -f1)
+           local TAMANHO=$(du -h "build/${PROJECT}" | cut -f1)
             echo "Status do build: Compilado"
-            echo "Executável: build/${project} (Tamanho: $TAMANHO)"
+            echo "Executável: build/${PROJECT} (Tamanho: $TAMANHO)"
 
             # Data da última compilação = data de modificação do executável.
 	        # "-r arquivo" faz o 'date' imprimir o mtime do arquivo em vez do horário atual.
-	        DATA_COMPILACAO=$(date -r "build/${project}" "+%Y-%m-%d %H:%M:%S")
+	        local DATA_COMPILACAO=$(date -r "build/${PROJECT}" "+%Y-%m-%d %H:%M:%S")
 	        echo "Última compilação: $DATA_COMPILACAO"
 
             # Registra informações do build no log
-            log_f "[$COMANDO] Build disponível - Executável: build/$project - Tamanho: $TAMANHO - Última compilação: $DATA_COMPILACAO"
+            log_f "[$COMANDO] Build disponível - Executável: build/$PROJECT - Tamanho: $TAMANHO - Última compilação: $DATA_COMPILACAO"
         else   
             echo "Status do build: indisponível (execute './cbuild build')"
 
             # Em caso de build não encontrado registra informação no log
-            log_f "[$COMANDO] Build indisponível - executável build/$project não encontrado."
+            log_f "[$COMANDO] Build indisponível - executável build/$PROJECT não encontrado."
         fi   
 
         # Verifica se o arquivo de log existe
         if [ -f "logs/cbuild.log" ]; then
-
             # Procura a última execução bem-sucedida
-            ULTIMA_EXECUCAO=$(grep '\[run\] Programa executado com êxito' logs/cbuild.log | tail -n 1)
-            
+            local ULTIMA_EXECUCAO=$(grep '\[run\] Programa executado com êxito' logs/cbuild.log | tail -n 1)
 
             if [ -n "$ULTIMA_EXECUCAO" ]; then
-
                 # Extrai a data e hora entre os primeiros colchetes
-                DATA_EXECUCAO=$(echo "$ULTIMA_EXECUCAO" | cut -d']' -f1 | tr -d '[')
+                local DATA_EXECUCAO=$(echo "$ULTIMA_EXECUCAO" | cut -d']' -f1 | tr -d '[')
 
                 echo "Última execução: $DATA_EXECUCAO"
-                
                 log_f "[$COMANDO] Última execução encontrada: $DATA_EXECUCAO"
-            
             else
-
                 echo "Última execução: indisponível (execute './cbuild run')"
-
                 log_f "[$COMANDO] Nenhuma execução bem-sucedida encontrada no log."
             fi
-
         else
-
             echo "Última execução: indisponível (execute './cbuild run')"
-
         fi
-
         echo "========================================="
 
         #Registra o fim do comando info
         log_f "[$COMANDO] Consulta de informações concluída com êxito."
-	 ;;   
-    *)   
-        echo "Erro: Comando '$COMANDO' desconhecido."
-        log_f "ERRO: Comando inválido ou ausente ($COMANDO)"
+	 
+}
+
+unknown_f() {
+    echo "Erro: Comando '$COMANDO' desconhecido."
+    log_f "ERRO: Comando inválido ou ausente ($COMANDO)"
+    echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
+    exit 1
+}
+
+main() {
+    # chamada de log_f  
+    log_f "Executando $COMANDO"
+    
+    # Se o usuario digitou com zero length arguments
+    
+    if [ -z "$COMANDO" ]; then
+        echo "Erro: Nenhum comando informado."
         echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
-        exit 1   
-        ;;   
-esac       
+        exit 1
+    fi
+    
+    case "$COMANDO" in
+        build) build_f;;
+        run) run_f;;      
+        clean) clean_f;; 
+        rebuild) rebuild_f;;   
+        info) info_f;;
+        *) unknown_f
+    esac       
+}
+
+main $@
+
+
  
