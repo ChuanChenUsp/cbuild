@@ -43,7 +43,7 @@ build_f() {
 
         # Se a saída do ultimo comando for 0 ... 
 
-        if [ $STATUS -eq 0 ]; then  
+        if [[ $STATUS -eq 0 ]]; then  
             echo "[cbuild] Compilação concluída com sucesso!"
             echo "[cbuild] Executável gerado em: build/${PROJECT}"  
             log_f "[$COMANDO] A compilação foi concluida com êxito - (build/$PROJECT) - Tempo: ${TIME}ms - Código de retorno: $STATUS"
@@ -64,7 +64,7 @@ run_f() {
     echo "[cbuild] Executando o programa. " 
     log_f "[$COMANDO] Tentativa de execução do programa."
           
-	if [ -f "build/${PROJECT}" ]; then #Executável "PROJECT' existe 
+	if [[ -f "build/${PROJECT}" ]]; then #Executável "PROJECT' existe 
         echo "[cbuild] Executando 'build/${PROJECT}':"
         echo "========================================" 
         echo ""
@@ -97,7 +97,7 @@ clean_f() {
     local FIM=$(date +%s%N | cut -c 1-13)
     local TIME=$((FIM - INICIO))
     # Checa o código de retorno do comando rm  
-    if [ $STATUS -eq 0 ]; then  
+    if [[ $STATUS -eq 0 ]]; then  
         echo "[cbuild] Limpeza concluída com sucesso!"
         log_f "[$COMANDO] Limpeza concluída com êxito em ${TIME}ms - Código de retorno: $STATUS"  
     else  
@@ -115,7 +115,7 @@ rebuild_f() {
     local STATUS=$?
 
     # Checa se a operação combinada falhou
-    if [ $STATUS -ne 0 ]; then 
+    if [[ $STATUS -ne 0 ]]; then 
         echo "[cbuild] Erro: Falha ao reconstruir o projeto."
         log_f "[$COMANDO] Erro: Falha ao reconstruir projeto. - Código de retorno: $STATUS"  
         exit 1  
@@ -154,7 +154,7 @@ info_f() {
         echo "Linhas de código: $LINHAS_CODIGO"
 
         # Checagem do estado do executável
-        if [ -f "build/${PROJECT}" ]; then
+        if [[ -f "build/${PROJECT}" ]]; then
 	        # Calcula o tamanho do arquivo em disco (-h) e filtra apenas o valor numérico com cut -f1 
            local TAMANHO=$(du -h "build/${PROJECT}" | cut -f1)
             echo "Status do build: Compilado"
@@ -175,11 +175,11 @@ info_f() {
         fi   
 
         # Verifica se o arquivo de log existe
-        if [ -f "logs/cbuild.log" ]; then
+        if [[ -f "logs/cbuild.log" ]]; then
             # Procura a última execução bem-sucedida
             local ULTIMA_EXECUCAO=$(grep '\[run\] Programa executado com êxito' logs/cbuild.log | tail -n 1)
 
-            if [ -n "$ULTIMA_EXECUCAO" ]; then
+            if [[ -n "$ULTIMA_EXECUCAO" ]]; then
                 # Extrai a data e hora entre os primeiros colchetes
                 local DATA_EXECUCAO=$(echo "$ULTIMA_EXECUCAO" | cut -d']' -f1 | tr -d '[')
 
@@ -212,7 +212,7 @@ main() {
     
     # Se o usuario digitou com zero length arguments
     
-    if [ -z "$COMANDO" ]; then
+    if [[ -z "$COMANDO" ]]; then
         echo "Erro: Nenhum comando informado."
         echo "Modo de uso: ./cbuild {build|run|clean|rebuild|info}"
         exit 1
