@@ -105,3 +105,9 @@
 [2026-09-14 16:47:41] Executando clean
 [2026-09-14 16:47:41] [clean] Iniciando limpeza do diretório build/
 [2026-09-14 16:47:41] [clean] Limpeza concluída com êxito em 4ms - Código de retorno: 0
+[2026-09-17 18:17:41] Executando build
+[2026-09-17 18:17:41] [build] Iniciando compilação
+[2026-09-17 18:17:41] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 378ms - Código de retorno: 0
+[2026-09-17 18:17:46] Executando build
+[2026-09-17 18:17:46] [build] Iniciando compilação
+[2026-09-17 18:17:46] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 17ms - Código de retorno: 0
