@@ -55,14 +55,14 @@ build_f() {
             exit 1
         fi
 
-        verbose "Compilando os códigos..."
+        verbose "Compilando os códigos: gcc -Iinclude ${SOURCES} -o build/${PROJECT}"
         gcc -Iinclude $SOURCES -o build/${PROJECT}    
 
         local STATUS=$?
         local FIM=$(date +%s%N | cut -c 1-13)
         local TIME=$((FIM - INICIO))
 
-        debug "STATUS = ${STATUS}"
+        debug "gcc STATUS = ${STATUS}"
 
         # Se a saída do ultimo comando for 0 ... 
         if [[ $STATUS -eq 0 ]]; then  
@@ -102,7 +102,7 @@ run_f() {
         echo ""     
         echo "========================================" 
 
-        debug "STATUS = ${STATUS}"
+        debug "./build/${PROJECT} STATUS = ${STATUS}"
     else  # Erro caso o binário não exista
         echo "[$COMANDO] Erro: Executável 'build/${PROJECT}' não encontrado."
         echo "[$COMANDO] Execute './cbuild build' antes de tentar executar."
@@ -116,14 +116,14 @@ clean_f() {
     log_f "[$COMANDO] Iniciando limpeza do diretório build/"  
     local INICIO=$(date +%s%N | cut -c 1-13)
     
-    verbose "Removendo os arquivos do diretório build/..."  
+    verbose "Removendo os arquivos do diretório build/: rm -rf build/*"  
     rm -rf build/*    
     
     local STATUS=$?
     local FIM=$(date +%s%N | cut -c 1-13)
     local TIME=$((FIM - INICIO))
     # Checa o código de retorno do comando rm  
-    debug "STATUS = ${STATUS}"
+    debug "rm STATUS = ${STATUS}"
     if [[ $STATUS -eq 0 ]]; then  
         echo "[$COMANDO] Limpeza concluída com sucesso!"
         log_f "[$COMANDO] Limpeza concluída com êxito em ${TIME}ms - Código de retorno: $STATUS"  
@@ -141,7 +141,7 @@ rebuild_f() {
     
     clean_f && build_f # Chama o comando clean e, se tiver sucesso, chama o comando build
     local STATUS=$?
-    debug "STATUS = ${STATUS}"
+    debug "rebuild STATUS = ${STATUS}"
     # Checa se a operação combinada falhou
     if [[ $STATUS -ne 0 ]]; then 
         echo "[$COMANDO] Erro: Falha ao reconstruir o projeto."
