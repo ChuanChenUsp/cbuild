@@ -111,3 +111,21 @@
 [2026-09-17 18:17:46] Executando build
 [2026-09-17 18:17:46] [build] Iniciando compilação
 [2026-09-17 18:17:46] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 17ms - Código de retorno: 0
+[2026-09-18 19:18:18] Executando info
+[2026-09-18 19:18:18] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 18:17:41
+[2026-09-18 19:18:18] [info] Última execução encontrada: 2026-09-10 19:33:37
+[2026-09-18 19:18:18] [info] Consulta de informações concluída com êxito.
+[2026-09-18 19:18:25] Executando build
+[2026-09-18 19:18:25] [build] Iniciando compilação
+[2026-09-18 19:18:25] [build] A compilação foi concluída com êxito - (build/MDC) - Tempo: 19ms - Código de retorno: 0
+[2026-09-18 19:20:21] Executando build
+[2026-09-18 19:20:21] [build] Iniciando compilação
+[2026-09-18 19:20:21] [build] A compilação foi concluída com êxito - (build/MDC) - Tempo: 18ms - Código de retorno: 0
+[2026-09-18 19:20:36] Executando remove
+[2026-09-18 19:20:36] ERRO: Comando inválido (remove)
+[2026-09-18 19:20:57] Executando clean
+[2026-09-18 19:20:57] [clean] Iniciando limpeza do diretório build/
+[2026-09-18 19:20:57] [clean] Limpeza concluída com êxito em 15ms - Código de retorno: 0
+[2026-09-18 19:21:04] Executando build
+[2026-09-18 19:21:04] [build] Iniciando compilação
+[2026-09-18 19:21:04] [build] A compilação foi concluída com êxito - (build/MDC) - Tempo: 358ms - Código de retorno: 0
