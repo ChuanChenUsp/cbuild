@@ -22,7 +22,7 @@ Para o melhor funcionamento desta ferramenta, o projeto de **C** deve ter seguin
 Esta ferramenta tem seguinte sintaxe:
 
 ```Shell
-./cbuild [OPÇÃO]
+./cbuild [OPÇÃO] [FUCIONALIDADES ADICIONAIS]
 ```
 
 As opções disponíveis são apresentadas a seguir:
@@ -37,12 +37,7 @@ Buscar e compilar os arquivos com sufixo .c no diretório *src/* junto com os ca
 
 1. criar o diretório *build/* ;
 2. criar o binário executável com o nome do diretório raiz;
-
-<!-- Falta implementar -->
-
 3. registrar o resultado do comando em diretório *logs/*.
-
-<!-- Falta implementar -->
 
 Caso contrário, cbuild irá:
 
@@ -82,6 +77,23 @@ Limpa e Recompila o projeto. Na prática, realiza um comando ./cbuild clean suce
 ```
 
 Exibe um relatório detalhado sobre o estado atual do projeto, quantidade e tamanho de arquivos. Note que ./cbuild info atua sem modificar ou apagar nenhum arquivo.
+
+## Fucionalidades Adicionais
+
+Você pode utilizar as funcionalidades adicionais usando seguintes argumentos.
+
+* Modo verboso [-v]
+* Modo debug [-d]
+
+Também é possível entrar nos ambos os modos através de
+
+```Shell
+./cbuild [OPCÃO] -vd
+```
+ou
+```Shell
+./cbuild [OPCÃO] -v -d
+```
 
 ## Erros Comuns
 

@@ -105,3 +105,415 @@
 [2026-09-14 16:47:41] Executando clean
 [2026-09-14 16:47:41] [clean] Iniciando limpeza do diretório build/
 [2026-09-14 16:47:41] [clean] Limpeza concluída com êxito em 4ms - Código de retorno: 0
+[2026-09-17 17:45:43] Executando -v
+[2026-09-17 17:45:43] ERRO: Comando inválido ou ausente (-v)
+[2026-09-17 17:46:05] Executando 
+[2026-09-17 17:46:13] Executando clean
+[2026-09-17 17:46:13] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 17:46:13] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 17:46:22] Executando clean
+[2026-09-17 17:46:22] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 17:46:22] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 17:48:14] Executando run
+[2026-09-17 17:48:14] [run] Tentativa de execução do programa.
+[2026-09-17 17:48:14] [run] ERRO: executável não encontrado.
+[2026-09-17 17:56:41] Executando build
+[2026-09-17 17:56:41] [build] Iniciando compilação
+[2026-09-17 17:56:42] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 89ms - Código de retorno: 0
+[2026-09-17 17:58:12] Executando build
+[2026-09-17 17:58:12] [build] Iniciando compilação
+[2026-09-17 17:58:12] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 38ms - Código de retorno: 0
+[2026-09-17 17:58:18] Executando clean
+[2026-09-17 17:58:18] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 17:58:18] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 17:58:22] Executando info
+[2026-09-17 17:58:22] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 17:58:22] [info] Última execução encontrada: 2026-09-10 19:33:37
+[2026-09-17 17:58:22] [info] Consulta de informações concluída com êxito.
+[2026-09-17 18:00:18] Executando clean
+[2026-09-17 18:00:18] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 18:00:18] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 18:17:28] Executando info
+[2026-09-17 18:17:28] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 18:17:28] [info] Última execução encontrada: 2026-09-10 19:33:37
+[2026-09-17 18:17:28] [info] Consulta de informações concluída com êxito.
+[2026-09-17 18:17:31] Executando build
+[2026-09-17 18:17:31] [build] Iniciando compilação
+[2026-09-17 18:17:31] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 18:20:13] Executando build
+[2026-09-17 18:20:13] [build] Iniciando compilação
+[2026-09-17 18:20:13] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 49ms - Código de retorno: 0
+[2026-09-17 19:47:19] Executando build
+[2026-09-17 19:47:19] [build] Iniciando compilação
+[2026-09-17 19:47:19] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:01:01] Executando build
+[2026-09-17 20:01:01] [build] Iniciando compilação
+[2026-09-17 20:01:01] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:01:04] Executando build
+[2026-09-17 20:01:04] [build] Iniciando compilação
+[2026-09-17 20:01:04] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:01:32] Executando build
+[2026-09-17 20:01:32] [build] Iniciando compilação
+[2026-09-17 20:01:32] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 49ms - Código de retorno: 0
+[2026-09-17 20:01:54] Executando build
+[2026-09-17 20:01:54] [build] Iniciando compilação
+[2026-09-17 20:01:55] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:01:57] Executando build
+[2026-09-17 20:01:57] [build] Iniciando compilação
+[2026-09-17 20:01:57] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:02:00] Executando -p
+[2026-09-17 20:02:00] ERRO: Modo inválido ()
+[2026-09-17 20:02:33] Executando build
+[2026-09-17 20:02:33] [build] Iniciando compilação
+[2026-09-17 20:02:33] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:02:36] Executando build
+[2026-09-17 20:02:36] [build] Iniciando compilação
+[2026-09-17 20:02:36] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 49ms - Código de retorno: 0
+[2026-09-17 20:03:02] Executando 
+[2026-09-17 20:03:02] ERRO: Comando ausente
+[2026-09-17 20:03:05] Executando 
+[2026-09-17 20:03:05] ERRO: Comando ausente
+[2026-09-17 20:03:09] Executando build
+[2026-09-17 20:03:09] [build] Iniciando compilação
+[2026-09-17 20:03:09] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:04:33] Executando build
+[2026-09-17 20:04:33] [build] Iniciando compilação
+[2026-09-17 20:04:33] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:05:00] Executando build
+[2026-09-17 20:05:00] [build] Iniciando compilação
+[2026-09-17 20:05:00] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:05:41] Executando clean
+[2026-09-17 20:05:41] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:05:41] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:05:44] Executando clean
+[2026-09-17 20:05:44] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:05:44] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:06:05] Executando clean
+[2026-09-17 20:06:05] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:06:05] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:06:11] Executando clean
+[2026-09-17 20:06:11] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:06:11] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:06:57] Executando -a
+[2026-09-17 20:06:57] ERRO: Modo inválido ()
+[2026-09-17 20:07:10] Executando -a
+[2026-09-17 20:07:10] ERRO: Modo inválido ()
+[2026-09-17 20:07:50] Executando -a
+[2026-09-17 20:07:50] ERRO: Modo inválido ()
+[2026-09-17 20:11:44] Executando clean
+[2026-09-17 20:11:44] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:11:44] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:12:28] Executando clean
+[2026-09-17 20:12:28] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:12:28] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:12:34] ERRO: Modo inválido (?)
+[2026-09-17 20:13:08] Executando clean
+[2026-09-17 20:13:08] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:13:08] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:13:35] Executando clean
+[2026-09-17 20:13:35] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:13:35] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:14:02] Executando clean
+[2026-09-17 20:14:02] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:14:02] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:16:03] Executando build
+[2026-09-17 20:16:03] [build] Iniciando compilação
+[2026-09-17 20:16:03] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:16:18] Executando rebuild
+[2026-09-17 20:16:18] [rebuild] Rebuild inicializado
+[2026-09-17 20:16:18] Executando clean
+[2026-09-17 20:16:18] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:16:18] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:16:18] Executando build
+[2026-09-17 20:16:18] [build] Iniciando compilação
+[2026-09-17 20:16:19] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:16:22] Executando run
+[2026-09-17 20:16:22] [run] Tentativa de execução do programa.
+[2026-09-17 20:16:22] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:16:28] Executando clean
+[2026-09-17 20:16:28] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:16:28] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:16:31] Executando info
+[2026-09-17 20:16:31] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 20:16:31] [info] Última execução encontrada: 2026-09-17 20:16:22
+[2026-09-17 20:16:31] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:18:12] Executando build
+[2026-09-17 20:18:12] [build] Iniciando compilação
+[2026-09-17 20:18:12] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 52ms - Código de retorno: 0
+[2026-09-17 20:18:14] Executando rebuild
+[2026-09-17 20:18:14] [rebuild] Rebuild inicializado
+[2026-09-17 20:18:14] Executando clean
+[2026-09-17 20:18:14] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:18:14] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:18:14] Executando build
+[2026-09-17 20:18:14] [build] Iniciando compilação
+[2026-09-17 20:18:15] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:18:17] Executando run
+[2026-09-17 20:18:17] [run] Tentativa de execução do programa.
+[2026-09-17 20:18:17] [run] ERRO: executável não encontrado.
+[2026-09-17 20:18:19] Executando clean
+[2026-09-17 20:18:19] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:18:19] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:18:21] Executando info
+[2026-09-17 20:18:21] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 20:18:21] [info] Última execução encontrada: 2026-09-17 20:16:22
+[2026-09-17 20:18:21] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:21:55] Executando build
+[2026-09-17 20:21:55] [build] Iniciando compilação
+[2026-09-17 20:21:56] [build] Erro: Falha na compilação - Tempo: 48ms - Código de retorno: 1
+[2026-09-17 20:22:27] Executando build
+[2026-09-17 20:22:27] [build] Iniciando compilação
+[2026-09-17 20:22:27] [build] Erro: Falha na compilação - Tempo: 49ms - Código de retorno: 1
+[2026-09-17 20:22:51] Executando clean
+[2026-09-17 20:22:51] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:22:51] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:22:54] Executando build
+[2026-09-17 20:22:54] [build] Iniciando compilação
+[2026-09-17 20:22:54] [build] Erro: Falha na compilação - Tempo: 49ms - Código de retorno: 1
+[2026-09-17 20:23:37] Executando build
+[2026-09-17 20:23:37] [build] Iniciando compilação
+[2026-09-17 20:23:37] [build] Erro: Falha na compilação - Tempo: 51ms - Código de retorno: 1
+[2026-09-17 20:23:39] Executando rebuild
+[2026-09-17 20:23:39] [rebuild] Rebuild inicializado
+[2026-09-17 20:23:39] Executando clean
+[2026-09-17 20:23:39] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:23:39] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:23:39] Executando build
+[2026-09-17 20:23:39] [build] Iniciando compilação
+[2026-09-17 20:23:39] [build] Erro: Falha na compilação - Tempo: 50ms - Código de retorno: 1
+[2026-09-17 20:23:39] [rebuild] Erro: Falha ao reconstruir projeto. - Código de retorno: 1
+[2026-09-17 20:23:42] Executando run
+[2026-09-17 20:23:42] [run] Tentativa de execução do programa.
+[2026-09-17 20:23:42] [run] ERRO: executável não encontrado.
+[2026-09-17 20:23:44] Executando clean
+[2026-09-17 20:23:44] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:23:44] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:23:47] Executando info
+[2026-09-17 20:23:47] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 20:23:47] [info] Última execução encontrada: 2026-09-17 20:16:22
+[2026-09-17 20:23:47] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:26:38] Executando run
+[2026-09-17 20:26:38] [run] Tentativa de execução do programa.
+[2026-09-17 20:26:38] [run] ERRO: executável não encontrado.
+[2026-09-17 20:26:51] Executando build
+[2026-09-17 20:26:51] [build] Iniciando compilação
+[2026-09-17 20:26:51] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 39ms - Código de retorno: 0
+[2026-09-17 20:26:53] Executando run
+[2026-09-17 20:26:53] [run] Tentativa de execução do programa.
+[2026-09-17 20:26:53] [run] Programa executado com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:27:18] Executando run
+[2026-09-17 20:27:18] [run] Tentativa de execução do programa.
+[2026-09-17 20:27:18] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:27:53] Executando run
+[2026-09-17 20:27:53] [run] Tentativa de execução do programa.
+[2026-09-17 20:27:53] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:28:14] Executando run
+[2026-09-17 20:28:14] [run] Tentativa de execução do programa.
+[2026-09-17 20:28:14] [run] Programa executado com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:28:39] Executando build
+[2026-09-17 20:28:39] [build] Iniciando compilação
+[2026-09-17 20:28:39] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:28:41] Executando build
+[2026-09-17 20:28:41] [build] Iniciando compilação
+[2026-09-17 20:28:42] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 53ms - Código de retorno: 0
+[2026-09-17 20:29:42] Executando clean
+[2026-09-17 20:29:42] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:29:42] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:29:44] Executando clean
+[2026-09-17 20:29:44] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:29:44] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:30:15] Executando clean
+[2026-09-17 20:30:15] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:30:15] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:30:26] Executando clean
+[2026-09-17 20:30:26] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:30:26] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:30:35] Executando clean
+[2026-09-17 20:30:35] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:30:35] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:30:43] Executando run
+[2026-09-17 20:30:43] [run] Tentativa de execução do programa.
+[2026-09-17 20:30:43] [run] ERRO: executável não encontrado.
+[2026-09-17 20:30:51] Executando build
+[2026-09-17 20:30:51] [build] Iniciando compilação
+[2026-09-17 20:30:51] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:30:59] Executando run
+[2026-09-17 20:30:59] [run] Tentativa de execução do programa.
+[2026-09-17 20:30:59] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:31:03] Executando run
+[2026-09-17 20:31:03] [run] Tentativa de execução do programa.
+[2026-09-17 20:31:03] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:31:06] Executando clean
+[2026-09-17 20:31:06] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:31:07] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:31:36] Executando clean
+[2026-09-17 20:31:36] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:31:36] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:31:43] Executando rebuild
+[2026-09-17 20:31:43] [rebuild] Rebuild inicializado
+[2026-09-17 20:31:43] Executando clean
+[2026-09-17 20:31:43] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:31:43] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:31:43] Executando build
+[2026-09-17 20:31:43] [build] Iniciando compilação
+[2026-09-17 20:31:43] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:33:20] Executando rebuild
+[2026-09-17 20:33:20] [rebuild] Rebuild inicializado
+[2026-09-17 20:33:20] [rebuild] Iniciando limpeza do diretório build/
+[2026-09-17 20:33:20] [rebuild] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:33:20] [rebuild] Iniciando compilação
+[2026-09-17 20:33:20] [rebuild] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:35:06] Executando rebuild
+[2026-09-17 20:35:06] [rebuild] Rebuild inicializado
+[2026-09-17 20:35:06] [rebuild] Iniciando limpeza do diretório build/
+[2026-09-17 20:35:06] [rebuild] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:35:06] [rebuild] Iniciando compilação
+[2026-09-17 20:35:06] [rebuild] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:35:28] Executando build
+[2026-09-17 20:35:28] [build] Iniciando compilação
+[2026-09-17 20:35:28] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:35:30] Executando build
+[2026-09-17 20:35:30] [build] Iniciando compilação
+[2026-09-17 20:35:30] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 52ms - Código de retorno: 0
+[2026-09-17 20:35:37] Executando run
+[2026-09-17 20:35:37] [run] Tentativa de execução do programa.
+[2026-09-17 20:35:37] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:36:39] Executando run
+[2026-09-17 20:36:39] [run] Tentativa de execução do programa.
+[2026-09-17 20:36:39] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:36:43] Executando run
+[2026-09-17 20:36:43] [run] Tentativa de execução do programa.
+[2026-09-17 20:36:43] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:36:53] Executando info
+[2026-09-17 20:36:53] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:35:30
+[2026-09-17 20:36:53] [info] Última execução encontrada: 2026-09-17 20:36:43
+[2026-09-17 20:36:53] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:37:11] Executando info
+[2026-09-17 20:37:11] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:35:30
+[2026-09-17 20:37:11] [info] Última execução encontrada: 2026-09-17 20:36:43
+[2026-09-17 20:37:11] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:38:03] Executando build
+[2026-09-17 20:38:03] [build] Iniciando compilação
+[2026-09-17 20:38:03] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:38:38] Executando build
+[2026-09-17 20:38:38] [build] Iniciando compilação
+[2026-09-17 20:38:38] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:39:44] Executando build
+[2026-09-17 20:39:44] [build] Iniciando compilação
+[2026-09-17 20:39:44] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:40:32] Executando build
+[2026-09-17 20:40:32] [build] Iniciando compilação
+[2026-09-17 20:40:33] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:40:38] Executando run
+[2026-09-17 20:40:38] [run] Tentativa de execução do programa.
+[2026-09-17 20:40:38] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:40:47] Executando build
+[2026-09-17 20:40:47] [build] Iniciando compilação
+[2026-09-17 20:40:47] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:40:51] Executando run
+[2026-09-17 20:40:51] [run] Tentativa de execução do programa.
+[2026-09-17 20:40:51] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:41:16] Executando run
+[2026-09-17 20:41:16] [run] Tentativa de execução do programa.
+[2026-09-17 20:41:16] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:41:24] Executando clean
+[2026-09-17 20:41:24] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:41:24] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:41:41] Executando clean
+[2026-09-17 20:41:41] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:41:41] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:41:42] Executando clean
+[2026-09-17 20:41:42] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:41:42] [clean] Limpeza concluída com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:42:24] Executando info
+[2026-09-17 20:42:24] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 20:42:24] [info] Última execução encontrada: 2026-09-17 20:41:16
+[2026-09-17 20:42:24] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:43:37] Executando infox
+[2026-09-17 20:43:37] ERRO: Comando inválido (infox)
+[2026-09-17 20:45:32] Executando build
+[2026-09-17 20:45:32] [build] Iniciando compilação
+[2026-09-17 20:45:32] [build] Erro: Falha na compilação - Tempo: 50ms - Código de retorno: 1
+[2026-09-17 20:45:40] Executando rebuild
+[2026-09-17 20:45:40] [rebuild] Rebuild inicializado
+[2026-09-17 20:45:40] [rebuild] Iniciando limpeza do diretório build/
+[2026-09-17 20:45:40] [rebuild] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:45:40] [rebuild] Iniciando compilação
+[2026-09-17 20:45:40] [rebuild] Erro: Falha na compilação - Tempo: 51ms - Código de retorno: 1
+[2026-09-17 20:45:48] Executando build
+[2026-09-17 20:45:48] [build] Iniciando compilação
+[2026-09-17 20:45:48] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 51ms - Código de retorno: 0
+[2026-09-17 20:45:50] Executando run
+[2026-09-17 20:45:50] [run] Tentativa de execução do programa.
+[2026-09-17 20:45:50] [run] Programa executado com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:45:56] Executando info
+[2026-09-17 20:45:56] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:45:48
+[2026-09-17 20:45:56] [info] Última execução encontrada: 2026-09-17 20:45:50
+[2026-09-17 20:45:56] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:45:59] Executando clean
+[2026-09-17 20:45:59] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:45:59] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:46:12] Executando build
+[2026-09-17 20:46:12] [build] Iniciando compilação
+[2026-09-17 20:46:12] [build] Erro: Falha na compilação - Tempo: 49ms - Código de retorno: 1
+[2026-09-17 20:46:17] Executando rebuild
+[2026-09-17 20:46:17] [rebuild] Rebuild inicializado
+[2026-09-17 20:46:17] [rebuild] Iniciando limpeza do diretório build/
+[2026-09-17 20:46:17] [rebuild] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:46:17] [rebuild] Iniciando compilação
+[2026-09-17 20:46:17] [rebuild] Erro: Falha na compilação - Tempo: 51ms - Código de retorno: 1
+[2026-09-17 20:46:27] Executando build
+[2026-09-17 20:46:27] [build] Iniciando compilação
+[2026-09-17 20:46:27] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 48ms - Código de retorno: 0
+[2026-09-17 20:46:30] Executando run
+[2026-09-17 20:46:30] [run] Tentativa de execução do programa.
+[2026-09-17 20:46:30] [run] Programa executado com êxito em 6ms - Código de retorno: 0
+[2026-09-17 20:46:34] Executando clean
+[2026-09-17 20:46:34] [clean] Iniciando limpeza do diretório build/
+[2026-09-17 20:46:34] [clean] Limpeza concluída com êxito em 5ms - Código de retorno: 0
+[2026-09-17 20:46:41] Executando info
+[2026-09-17 20:46:41] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 20:46:41] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 20:46:41] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:49:28] Executando info
+[2026-09-17 20:49:29] [info] Build indisponível - executável build/MDC não encontrado.
+[2026-09-17 20:49:29] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 20:49:29] [info] Consulta de informações concluída com êxito.
+[2026-09-17 20:56:29] Executando build
+[2026-09-17 20:56:29] [build] Iniciando compilação
+[2026-09-17 20:56:29] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 50ms - Código de retorno: 0
+[2026-09-17 20:58:13] Executando info
+[2026-09-17 20:58:13] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:56:29
+[2026-09-17 20:58:13] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 20:58:13] [info] Consulta de informações concluída com êxito.
+[2026-09-17 21:00:45] Executando info
+[2026-09-17 21:00:45] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:56:29
+[2026-09-17 21:00:45] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 21:00:45] [info] Consulta de informações concluída com êxito.
+[2026-09-17 21:00:47] Executando info
+[2026-09-17 21:00:47] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:56:29
+[2026-09-17 21:00:47] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 21:00:47] [info] Consulta de informações concluída com êxito.
+[2026-09-17 21:01:08] Executando info
+[2026-09-17 21:01:08] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:56:29
+[2026-09-17 21:01:08] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 21:01:08] [info] Consulta de informações concluída com êxito.
+[2026-09-17 21:01:09] Executando info
+[2026-09-17 21:01:14] [info] Build disponível - Executável: build/MDC - Tamanho: 16K - Última compilação: 2026-09-17 20:56:29
+[2026-09-17 21:01:15] [info] Última execução encontrada: 2026-09-17 20:46:30
+[2026-09-17 21:01:15] [info] Consulta de informações concluída com êxito.
+[2026-09-17 21:02:28] Executando build
+[2026-09-17 21:02:29] [build] Iniciando compilação
+[2026-09-17 21:02:33] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 2056ms - Código de retorno: 0
+[2026-09-17 21:03:59] Executando build
+[2026-09-17 21:04:00] [build] Iniciando compilação
+[2026-09-17 21:04:04] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 2078ms - Código de retorno: 0
+[2026-09-17 21:07:34] Executando build
+[2026-09-17 21:07:35] [build] Iniciando compilação
+[2026-09-17 21:07:40] [build] A compilação foi concluida com êxito - (build/MDC) - Tempo: 2056ms - Código de retorno: 0
+[2026-09-17 21:07:50] Executando rebuild
+[2026-09-17 21:07:51] [rebuild] Rebuild inicializado
+[2026-09-17 21:07:52] [rebuild] Iniciando limpeza do diretório build/
+[2026-09-17 21:07:53] [rebuild] Limpeza concluída com êxito em 1009ms - Código de retorno: 0
+[2026-09-17 21:07:54] [rebuild] Iniciando compilação
+[2026-09-17 21:07:58] [rebuild] A compilação foi concluida com êxito - (build/MDC) - Tempo: 2057ms - Código de retorno: 0
